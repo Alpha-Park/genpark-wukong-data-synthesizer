@@ -1,0 +1,10 @@
+{
+  "name": "genpark-wukong-data-synthesizer",
+  "version": "1.0.0",
+  "description": "GenPark Wukong Data Synthesizer - Differential privacy Laplace mechanism generator, Wasserstein marginal distance fidelity evaluator, and correlation matrix preservation auditor with zero dependencies.",
+  "tools": [
+    "generate_laplace_differential_privacy_noise",
+    "calculate_wasserstein_marginal_distance",
+    "evaluate_correlation_matrix_preservation"
+  ]
+}
