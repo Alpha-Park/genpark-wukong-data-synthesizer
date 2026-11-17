@@ -3,10 +3,10 @@
 ![Tests](https://img.shields.io/badge/tests-passing-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
-![Dependencies](https://img.shields.io/badge/dependencies-zero-success)
+![MCP SDK](https://img.shields.io/badge/MCP-SDK_Required-blue)
 ![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)
 
-GenPark Wukong Data Synthesizer is a zero-dependency differential privacy and synthetic data validation engine implementing the Laplace mechanism for privacy budget $\epsilon$, 1D Wasserstein Earth Mover's Distance distribution fidelity scoring, and Frobenius norm correlation preservation matrices.
+GenPark Wukong Data Synthesizer provides a standard-library differential privacy and synthetic data validation engine implementing the Laplace mechanism for privacy budget $\epsilon$, 1D Wasserstein Earth Mover's Distance distribution fidelity scoring, and Frobenius norm correlation preservation matrices.
 
 ```mermaid
 flowchart LR
@@ -31,6 +31,23 @@ from client import GenParkWukongDataSynthesizer
 synth = GenParkWukongDataSynthesizer()
 res = synth.generate_laplace_differential_privacy_noise(100.0, epsilon=1.0)
 print("Privatized Value:", res["privatized_value"])
+```
+
+## MCP Setup
+
+The core Python client uses only the standard library. Running the MCP server requires **Python 3.10+** and the official **`mcp>=1.0.0,<2` SDK**. From the repository directory:
+
+```bash
+python -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+```
+
+On Windows, use `.venv\Scripts\python.exe` instead. Configure the MCP client to use this environment's Python executable. The server runs locally over stdio; the GitHub repository URL is not a remote MCP endpoint.
+
+Start the server from the repository directory:
+
+```bash
+.venv/bin/python mcp_server.py
 ```
 
 ## License
