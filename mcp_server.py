@@ -50,8 +50,7 @@ def evaluate_correlation_matrix_preservation(
     return json.dumps(res, indent=2)
 
 def main():
-    print("Testing Data Synthesizer:")
-    print(generate_laplace_differential_privacy_noise(100.0, 1.0, 1.0))
+    mcp.run(transport="stdio")
 
 if __name__ == "__main__":
     main()
